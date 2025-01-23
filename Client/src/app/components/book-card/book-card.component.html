@@ -1,0 +1,51 @@
+<ng-container *ngIf="book">
+  <div
+    class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96"
+  >
+    <img
+      [src]="book.image"
+      alt="card-image"
+      class="w-full h-72 object-contain"
+    />
+
+    <div class="p-4">
+      <h6 class="mb-2 text-slate-800 text-xl font-semibold">
+        {{ book.title }}
+      </h6>
+      <p class="text-slate-600 leading-normal font-light">
+        The place is close to Barceloneta Beach and bus stop just 2 min by walk
+        and near to &quot;Naviglio&quot; where you can enjoy the main night life
+        in Barcelona.
+      </p>
+    </div>
+
+    <!-- Display Success Message -->
+    <div *ngIf="successMessage" class="text-green-500 p-2 bg-green-100 border border-green-500 rounded-md mt-2">
+      <p>{{ successMessage }}</p>
+    </div>
+
+    <!-- Display Error Message -->
+    <div *ngIf="errorMessage" class="text-red-500 p-2 bg-red-100 border border-red-500 rounded-md mt-2">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <div class="flex justify-between p-6 pt-0">
+      <a
+        [href]="book.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-md bg-indigo-500 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        More Details
+      </a>
+      <button
+        class="rounded-md bg-green-500 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        (click)="addToCart()"
+      >
+        Add To Cart
+      </button>
+    </div>
+  </div>
+</ng-container>

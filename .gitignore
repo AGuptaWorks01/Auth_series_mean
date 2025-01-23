@@ -1,0 +1,11 @@
+# Ignore node_modules in the api folder
+/api/node_modules/
+
+# Ignore .angular, .vscode, node_modules in the client folder
+/client/.angular/
+/client/.vscode/
+/client/node_modules/
+
+# Optionally, you can ignore other file types or specific folders too, if needed:
+# /client/build/ 
+# .env
